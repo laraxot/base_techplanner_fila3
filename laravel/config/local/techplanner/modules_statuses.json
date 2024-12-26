@@ -11,7 +11,7 @@
     "Job": true,
     "Limesurvey": true,
     "Activity": true,
-    "Geo":true,
+    "Geo": true,
     "User": true,
     "Setting": true,
     "BarberShop": true,
@@ -22,7 +22,7 @@
     "Forum": true,
     "Gdpr": true,
     "Media": true,
-    "Predict": true,
+    "TechPlanner": true,
     "Shop": true,
     "Ticket": true
 }
