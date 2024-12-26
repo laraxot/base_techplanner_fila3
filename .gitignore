@@ -28,3 +28,10 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+*.mdb
+*.csv
+*.log
+*.phar
+laravel/database/migrations/
+laravel/stubs/
+laravel/lang/vendor/

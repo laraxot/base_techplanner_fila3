@@ -50,3 +50,6 @@
 
 
 
+[submodule "laravel/Themes/One"]
+	path = laravel/Themes/One
+	url = https://github.com/laraxot/theme_one_fila3.git

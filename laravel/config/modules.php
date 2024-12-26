@@ -168,6 +168,11 @@ return [
         ],
     ],
 
+    'modules' => [
+        'TechPlanner',
+        // 'TechPlanner', // Temporarily disabled
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Auto Discover of Modules
