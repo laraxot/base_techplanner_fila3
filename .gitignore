@@ -35,3 +35,4 @@ auth.json
 laravel/database/migrations/
 laravel/stubs/
 laravel/lang/vendor/
+composer.lock
