@@ -1,47 +1,50 @@
 #tools
 [submodule "bashscripts"]
 	path = bashscripts
-	url = https://github.com/aurmich/bashscripts_fila3.git
+	url = git@github.com:aurmich/bashscripts_fila3.git
 
 #modules	
 [submodule "laravel/Modules/Xot"]
 	path = laravel/Modules/Xot
-	url = https://github.com/aurmich/module_xot_fila3.git
+	url = git@github.com:aurmich/module_xot_fila3.git
 [submodule "laravel/Modules/Job"]
 	path = laravel/Modules/Job
-	url = https://github.com/aurmich/module_job_fila3.git
+	url = git@github.com:aurmich/module_job_fila3.git
 [submodule "laravel/Modules/User"]
 	path = laravel/Modules/User
-	url = https://github.com/aurmich/module_user_fila3.git
+	url = git@github.com:aurmich/module_user_fila3.git
 [submodule "laravel/Modules/Media"]
 	path = laravel/Modules/Media
-	url = https://github.com/aurmich/module_media_fila3.git
+	url = git@github.com:aurmich/module_media_fila3.git
 [submodule "laravel/Modules/Notify"]
 	path = laravel/Modules/Notify
-	url = https://github.com/aurmich/module_notify_fila3.git
+	url = git@github.com:aurmich/module_notify_fila3.git
 [submodule "laravel/Modules/Tenant"]
 	path = laravel/Modules/Tenant
-	url = https://github.com/aurmich/module_tenant_fila3.git
+	url = git@github.com:aurmich/module_tenant_fila3.git
 [submodule "laravel/Modules/UI"]
 	path = laravel/Modules/UI
-	url = https://github.com/aurmich/module_ui_fila3.git
+	url = git@github.com:aurmich/module_ui_fila3.git
 [submodule "laravel/Modules/Activity"]
 	path = laravel/Modules/Activity
-	url = https://github.com/aurmich/module_activity_fila3.git
+	url = git@github.com:aurmich/module_activity_fila3.git
 [submodule "laravel/Modules/Gdpr"]
 	path = laravel/Modules/Gdpr
-	url = https://github.com/aurmich/module_gdpr_fila3.git
+	url = git@github.com:aurmich/module_gdpr_fila3.git
 [submodule "laravel/Modules/Lang"]
 	path = laravel/Modules/Lang
-	url = https://github.com/aurmich/module_lang_fila3.git
+	url = git@github.com:aurmich/module_lang_fila3.git
 [submodule "laravel/Modules/Geo"]
 	path = laravel/Modules/Geo
-	url = https://github.com/aurmich/module_geo_fila3.git
+	url = git@github.com:aurmich/module_geo_fila3.git
 [submodule "laravel/Modules/TechPlanner"]
 	path = laravel/Modules/TechPlanner
-	url = git@github.com:laraxot/module_techplanner_fila3.git
+	url = git@github.com:aurmich/module_techplanner_fila3.git
 
 #themes
+[submodule "laravel/Themes/One"]
+	path = laravel/Themes/One
+	url = git@github.com:aurmich/theme_one_fila3.git
 	
 
 #packages
@@ -50,6 +53,3 @@
 
 
 
-[submodule "laravel/Themes/One"]
-	path = laravel/Themes/One
-	url = https://github.com/laraxot/theme_one_fila3.git
