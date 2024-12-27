@@ -1,5 +1,6 @@
 <?php
 
+use Modules\Tenant\Services\TenantService;
 use Nwidart\Modules\Activators\FileActivator;
 use Nwidart\Modules\Providers\ConsoleServiceProvider;
 
@@ -279,7 +280,8 @@ return [
     'activators' => [
         'file' => [
             'class' => FileActivator::class,
-            'statuses-file' => base_path('modules_statuses.json'),
+            //'statuses-file' => base_path('modules_statuses.json'),
+            'statuses-file' => TenantService::filePath('modules_statuses.json'),
         ],
     ],
 
