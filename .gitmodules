@@ -39,7 +39,7 @@
 	url = https://github.com/aurmich/module_geo_fila3.git
 [submodule "laravel/Modules/TechPlanner"]
 	path = laravel/Modules/TechPlanner
-	url = git@github.com:laraxot/module_techplanner_fila3.git 
+	url = https://github.com/aurmich/module_techplanner_fila3.git 
 
 #themes
 	
