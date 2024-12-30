@@ -12292,16 +12292,16 @@
         },
         {
             "name": "spatie/laravel-model-states",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-model-states.git",
-                "reference": "627ceb869f2f7a251cce4d34b1f72e1f677eb0a6"
+                "reference": "308f1552d384f4b3c494d860e7dba881fe5bb6cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-model-states/zipball/627ceb869f2f7a251cce4d34b1f72e1f677eb0a6",
-                "reference": "627ceb869f2f7a251cce4d34b1f72e1f677eb0a6",
+                "url": "https://api.github.com/repos/spatie/laravel-model-states/zipball/308f1552d384f4b3c494d860e7dba881fe5bb6cf",
+                "reference": "308f1552d384f4b3c494d860e7dba881fe5bb6cf",
                 "shasum": ""
             },
             "require": {
@@ -12352,7 +12352,7 @@
                 "state"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-model-states/tree/2.9.0"
+                "source": "https://github.com/spatie/laravel-model-states/tree/2.10.0"
             },
             "funding": [
                 {
@@ -12364,7 +12364,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-16T15:39:46+00:00"
+            "time": "2024-12-30T09:34:54+00:00"
         },
         {
             "name": "spatie/laravel-model-status",
