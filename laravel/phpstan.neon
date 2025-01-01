@@ -8,7 +8,7 @@ includes:
 
 parameters:
 
-    level: max
+    level: 9
 
     #cache:
     #    nodesByStringCountMax: 0
