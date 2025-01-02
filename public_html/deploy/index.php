@@ -1,60 +1,54 @@
-<?php
-session_start();
+<?php 
+	session_start();
 
-$config = include 'config.php';
+    $config = include 'config.php';
+    
+    if (isset($_GET['pass']) && $_GET['pass'] == $config['admin_pass']){
+        $_SESSION['logged'] = 'ok';
+        @header('Location: index.php');
+    }
 
-if (isset($_GET['pass']) && $_GET['pass'] == $config['admin_pass']) {
-    $_SESSION['logged'] = 'ok';
-    @header('Location: index.php');
-}
-
-if (isset($_GET['del']) && isset($_SESSION['logged'])) {
-    clear_file($_GET['del']);
-    @header('Location: index.php');
-}
+    if (isset($_GET['del']) && isset($_SESSION['logged'])) {
+        clear_file($_GET['del']);
+        @header('Location: index.php');
+    }
 ?>
 
 <!DOCTYPE HTML>
-
 <head>
-    <meta http-equiv="content-type" content="text/html" />
-    <meta name="author" content="Thomas Malicet" />
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Thomas Malicet" />
 
-    <title>FTPbucket</title>
-    <style>
-        .log {
-            font: 10px verdana, sans-serif;
-            width: 100%;
-            border: solid 1px #000;
-            height: 500px;
-            overflow: scroll;
-            white-space: pre-wrap;
-            /* CSS 3 */
-            white-space: -moz-pre-wrap;
-            /* Mozilla, since 1999 */
-            white-space: -pre-wrap;
-            /* Opera 4-6 */
-            white-space: -o-pre-wrap;
-            /* Opera 7 */
-            word-wrap: break-word;
-        }
-
-        td {
-            padding: 5px;
-        }
-    </style>
+	<title>FTPbucket</title>
+	<style>
+	    .log{
+	        font: 10px verdana,sans-serif;
+	        width: 100%;
+	        border: solid 1px #000;
+	        height: 500px;
+	        overflow: scroll;
+	        white-space: pre-wrap;       /* CSS 3 */
+            white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word; 
+	    }
+	    td {
+	        padding: 5px;
+	    }
+	</style>
 </head>
 
 <body>
 
-    <?php
-    if (! isset($_SESSION['logged'])) {
-        ?>
-    <form action="" method="get">
-        <input type="password" name="pass" size="20" />
-        <input type="submit" name="submit" value="Login" />
-    </form>
-    <?php
+<?php 
+    if (!isset($_SESSION['logged'])) {
+?>
+        <form action="" method="get">
+            <input type="password" name="pass" size="20" />
+            <input type="submit" name="submit" value="Login" />
+        </form>
+<?php
     } else {
         $exp1 = '';
         if (file_exists('logfile.txt')) {
@@ -63,7 +57,7 @@ if (isset($_GET['del']) && isset($_SESSION['logged'])) {
                 $exp1 .= $ln;
             }
         }
-
+        
         $exp2 = '';
         if (file_exists('logpayload.txt')) {
             $log2 = file('logpayload.txt');
@@ -72,41 +66,37 @@ if (isset($_GET['del']) && isset($_SESSION['logged'])) {
             }
         }
         ?>
-
-    <table width='100%'>
-        <tr>
-            <td width='50%'>
+        
+        <table width='100%'>
+            <tr><td width='50%'>
                 Logs - <a href='?del=log1'>Clear This Logs</a><br />
                 <pre class='log'><?php echo $exp1; ?></pre>
-            </td>
-            <td width='50%'>
-                Payload - <a href='?del=log2'>Clear This Logs</a><br />
+            </td><td width='50%'>
+                Payload -   <a href='?del=log2'>Clear This Logs</a><br />
                 <pre class='log'><?php echo $exp2; ?></pre>
-            </td>
-        </tr>
-    </table>
-
-    <?php
+            </td></tr>
+        </table>
+        
+        <?php
     }
 ?>
 
 </body>
-
 </html>
 
 <?php
-function clear_file($f)
-{
-    if ('log1' == $f) {
+function clear_file($f){
+    
+    if ($f == 'log1'){
         $f = 'logfile.txt';
-    } elseif ('log2' == $f) {
+    } else if ($f == 'log2'){
         $f = 'logpayload.txt';
     } else {
-        exit;
+        die();
     }
-
-    $f = @fopen($f, 'r+');
-    if (false !== $f) {
+    
+    $f = @fopen($f, "r+");
+    if ($f !== false) {
         ftruncate($f, 0);
         fclose($f);
     }
