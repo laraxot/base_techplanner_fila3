@@ -36,3 +36,5 @@ laravel/database/migrations/
 laravel/stubs/
 laravel/lang/vendor/
 composer.lock
+public_html/deploy/config.php
+public_html/deploy/*.txt
