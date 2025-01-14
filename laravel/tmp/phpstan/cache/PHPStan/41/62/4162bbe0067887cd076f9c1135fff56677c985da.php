@@ -8508,7 +8508,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'F:\\var\\www\\techplanner\\laravel\\Modules\\Notify\\lang\\it\\notify_theme.php' => 
     array (
-      0 => 'f348acc874236e72a27329a85726af4b7a630750',
+      0 => '4e68997cacecb15d1ec359920760657dc22febab',
       1 => 
       array (
       ),
@@ -22366,7 +22366,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\tenant.php' => 
     array (
-      0 => '0ebb519a4f8bc2de5e58833146f6681720da90eb',
+      0 => 'abf30ac1110b4a810b93c403c6e071735e435a40',
       1 => 
       array (
       ),
@@ -26772,7 +26772,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'F:\\var\\www\\techplanner\\laravel\\Modules\\Xot\\app\\Providers\\XotBaseRouteServiceProvider.php' => 
     array (
-      0 => '7df7c873cda28f68d620cfad7dfb1da86bd77acc',
+      0 => '056dcc83d0b0cd05e5c2c58c922bfe9880e5aba6',
       1 => 
       array (
         0 => 'modules\\xot\\providers\\xotbaserouteserviceprovider',
@@ -26790,7 +26790,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'F:\\var\\www\\techplanner\\laravel\\Modules\\Xot\\app\\Providers\\XotBaseServiceProvider.php' => 
     array (
-      0 => '145c63998f639376b18febab2f1a8227c1025369',
+      0 => '49340079e109a17aa331ff487b01818b94dd825e',
       1 => 
       array (
         0 => 'modules\\xot\\providers\\xotbaseserviceprovider',
@@ -34735,6 +34735,1748 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'F:\\var\\www\\techplanner\\laravel\\Modules\\Lang\\Resources\\views\\livewire\\lang\\change.blade.php' => 
     array (
       0 => 'bb064523c058560b714a209f71aabe0ed0246153',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ar\\default.php' => 
+    array (
+      0 => '71ae9c9b0324384a0417e6158f3528308237c9f5',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ar\\filament-shield.php' => 
+    array (
+      0 => '2f809d8be534ac7219f735b597f1f84d046e7473',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\cs\\default.php' => 
+    array (
+      0 => '1fba2908a67466d0d7b8ffa19164c1079e454e02',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\de\\default.php' => 
+    array (
+      0 => '06fec2e837315cf7a1663be1624560340c39cb90',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\de\\filament-shield.php' => 
+    array (
+      0 => '83359374a253e8182758ed859653a5e5ebc13957',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\el\\default.php' => 
+    array (
+      0 => 'b94e42c313f123b67305b29e9b8e1b3a879a81ec',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\actions.php' => 
+    array (
+      0 => 'b9ee8f8b20998ba5576f65a96283634bdb9b4cca',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\auth.php' => 
+    array (
+      0 => '297f21320f9196053903dc72ed7912b83976c166',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\default.php' => 
+    array (
+      0 => 'a2088b3db86e9ebbc25a17390048a17e17f04ea9',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\fields.php' => 
+    array (
+      0 => 'ac5d860cdee2c2b7ad86d4dd3f04f6e4cdfc54fe',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\filament-shield.php' => 
+    array (
+      0 => '0838c1e32e46f7975d9c1671e1412333925933c4',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\notifications.php' => 
+    array (
+      0 => 'd868ac955e2856f2d95a3e3461c683972f68ff31',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\timex.php' => 
+    array (
+      0 => 'fdc44a9ebe4d1a20f2a33dda6e7f0391084558ca',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\en\\user.php' => 
+    array (
+      0 => 'f86fbfa81d67a9899b8209bfaf7fed3de41bb9b3',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\es\\default.php' => 
+    array (
+      0 => '9f1f11e525cd76c58c383ba52ca3ce8f025b179e',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\es\\filament-shield.php' => 
+    array (
+      0 => '79046fdae9ab744b537a9381eb5da924a7914a8f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\fa\\default.php' => 
+    array (
+      0 => 'bb78d85b14e90e71361ebb30ba3a9d7f20775221',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\fa\\filament-shield.php' => 
+    array (
+      0 => '574a2eece6ea33e5b3e4d4e7bf9983d7ce133322',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\fi\\default.php' => 
+    array (
+      0 => '35a19931f660a1fd8f06179957f17e29fb02f68d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\fr\\default.php' => 
+    array (
+      0 => 'd4f5fa1cc9447e1477bd874c6073d31fcd80bbd0',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\fr\\filament-shield.php' => 
+    array (
+      0 => '2deee270530a120de8c3b61c25eee049185566bf',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\he\\default.php' => 
+    array (
+      0 => '17a9c6cd3ed17a27a633d6cfc391099e8d061583',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\hu\\default.php' => 
+    array (
+      0 => '01234903b008f16777c66e1b3b32a490159f7a5f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\hu\\filament-shield.php' => 
+    array (
+      0 => 'a460dcd02efcd53fc201d3e57b9b6080a34e0aaf',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\id\\default.php' => 
+    array (
+      0 => 'e1eb277e8cb938ab0bc4ee755283aea95559e406',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\id\\filament-shield.php' => 
+    array (
+      0 => '91770a0aae05e58a1de582fbbabac30f840d2786',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\actions.php' => 
+    array (
+      0 => 'e398a3ceeebefa8ab8fb3688679c8018816bf762',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\auth.php' => 
+    array (
+      0 => 'f8c25d84ae2f8a8e0689d49435fc76a2960a5e63',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\change_password.php' => 
+    array (
+      0 => '6a99bb4f673a92f3b4c5eaa70a02648cbc163d9b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\change_profile_password.php' => 
+    array (
+      0 => '6a99bb4f673a92f3b4c5eaa70a02648cbc163d9b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\change_profile_password_action.php' => 
+    array (
+      0 => 'cf0eca13f22769a7cd2fa403c4925a1319436699',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\clients.php' => 
+    array (
+      0 => '5c685d051f32a2cc47a6657fb1a358d17531ea7b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\default.php' => 
+    array (
+      0 => '7b9cad7a92f02f8de37c5369641efda6fb3f201d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\device.php' => 
+    array (
+      0 => '7d007b6ffbef1808f70b4addc6b73bb1dbde2583',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\devices.php' => 
+    array (
+      0 => '8836ed3de94a789a5b746b22ca03c123775eb1f4',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\edit_tenant.php' => 
+    array (
+      0 => 'c7ca7c52d655e3d091022f1e6c8d1c67c8dee078',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\email.php' => 
+    array (
+      0 => '3da9ac6da537867d61931cc2dfd091f3f925f3ff',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\feature.php' => 
+    array (
+      0 => '315b57e25d1ef7002c8689c68355535eaffd519f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\fields.php' => 
+    array (
+      0 => '73b2e321f6f490ba088af6862b74fb1beb5376da',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\filament-shield.php' => 
+    array (
+      0 => '2e75c24d8c49842f8ffa71e9b23a33e565b5c697',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\filters.php' => 
+    array (
+      0 => '9b5ddd38f8a6ff6230499c38c61542c5da2a9158',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\notifications.php' => 
+    array (
+      0 => '69b7a151d195f57b82ab416c42e955ac68fee229',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\otp.php' => 
+    array (
+      0 => 'cbe2e3aa0d545e7ddb984360d45bad42425d9570',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\password.php' => 
+    array (
+      0 => 'ff72fa22f143b78522ad3d2b0edbf27c513b042e',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\passwords.php' => 
+    array (
+      0 => '125ff1405ee908736d3be1b4c5adace98ca438af',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\password_expired.php' => 
+    array (
+      0 => '10c5700117ad450a0c4ee22d31ad6323c89c8a2d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\permission.php' => 
+    array (
+      0 => '47d19b74856831be7cca08faaa28523c44cc96e7',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\profile.php' => 
+    array (
+      0 => '3f03a2886d0a451a786411c91e39bf846ac13267',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\reset_password.php' => 
+    array (
+      0 => '50820945a01122a208b732145cd189125eca9247',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\role.php' => 
+    array (
+      0 => 'dd9c1ccda99492467d75716b90d6cbb648e0a041',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\roles.php' => 
+    array (
+      0 => '3bf5e3e4752b229982a4fa2cd6688f2167b655f7',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\socialite_users.php' => 
+    array (
+      0 => '78e1291ab5030a4f7241ee1b341c7a4d21703d8d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\social_provider.php' => 
+    array (
+      0 => '098a1587af10800fa3b89da6aef2d58b4267dc0a',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\team.php' => 
+    array (
+      0 => '4b462c0777e408d27bf97fbd2102d6cf2366ca72',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\tenancy.php' => 
+    array (
+      0 => '361c699b31d99de03fda1a16f0a28de35823d686',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\tenants.php' => 
+    array (
+      0 => '1cf116acec63faf669a04f427f6b45591509668d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\tokens.php' => 
+    array (
+      0 => '5c685d051f32a2cc47a6657fb1a358d17531ea7b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\user.php' => 
+    array (
+      0 => 'd859ac0c5c3fa1b1bae7ec3aab886fb920a57179',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\users_chart.php' => 
+    array (
+      0 => '69ea6b4e9d170d4bf0350f7c4e04e4f912a306bb',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\validation.php' => 
+    array (
+      0 => 'd02e6a6f238e9a863f323abc6da4766351bfee98',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\it\\view_tenant.php' => 
+    array (
+      0 => 'fd7376013457e4a4426ce7d14afcc73e14f9bd33',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ja\\default.php' => 
+    array (
+      0 => '012818ad81abbe439a74c04a8201b5f31d55836c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ja\\filament-shield.php' => 
+    array (
+      0 => '5d64e62bfc563cef50629f9fc2cc68b549f0027a',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ko\\default.php' => 
+    array (
+      0 => '63c9fc67e362ccaa2c6a7924c59ff4e04a85cff9',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ms\\default.php' => 
+    array (
+      0 => '0d34b250cdb6d725aa9a15ab2c176e94d00e66c7',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\nl\\default.php' => 
+    array (
+      0 => 'ab79798020374d0f8fbb22ca6f16cf2fede5f037',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\nl\\filament-shield.php' => 
+    array (
+      0 => 'd9c9a967441c67bb56475be9b09f05d70639f40b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\pl\\default.php' => 
+    array (
+      0 => '17156255bd08b9f527b6b2246f562e08b4fbbf2c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\pt_BR\\default.php' => 
+    array (
+      0 => '5d08841b83e85cfe595618fc7c9a639000a4f88d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\pt_BR\\filament-shield.php' => 
+    array (
+      0 => '68a2b4c8cd374c11be487cf86e42cf88e9b4e558',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\pt_BR\\timex.php' => 
+    array (
+      0 => '830e872d2a0fe463f2ed9e5dfd2e97168955bd91',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\pt_PT\\default.php' => 
+    array (
+      0 => '9dd09a1c9e1f39aafb541b346d0b39174adeeeac',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ro\\default.php' => 
+    array (
+      0 => '5fa9265cf8284d579f0c989b586af91fda3b8885',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ro\\filament-shield.php' => 
+    array (
+      0 => 'e04914eb4e102156a955d16e13fdfc605e86f88e',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ru\\default.php' => 
+    array (
+      0 => 'af776a281aaec504a700a12ec358e396865bab3f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ru\\filament-shield.php' => 
+    array (
+      0 => '749ce30a807f8424c8b2fb1b6386232df8821482',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\ru\\timex.php' => 
+    array (
+      0 => '98a14c0ddb6e705c93535b30ed28a760215f022b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\sk\\default.php' => 
+    array (
+      0 => 'bdb0000fd15cb2bf39f2629bed34c1d49aa45089',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\sl\\default.php' => 
+    array (
+      0 => '76384f9215a0193ecdc7eb62e9c511e521f97935',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\sq\\default.php' => 
+    array (
+      0 => 'dc1b95c2d04e5d7e5d1d5d7e20a69d9c8f1f026c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\tr\\default.php' => 
+    array (
+      0 => '151de8b1de079b60dbe745302ba627611105dcfc',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\tr\\filament-shield.php' => 
+    array (
+      0 => 'b8202a5da906860291aa0b03d2a7544d0ee72561',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\uk\\default.php' => 
+    array (
+      0 => 'ece7067826343fc79a111fc91ec084f2ed896e81',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\uk\\filament-shield.php' => 
+    array (
+      0 => 'ba784d580439193210434fe6e2141e2b4ca1d0c5',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\vi\\default.php' => 
+    array (
+      0 => 'a724212b96cb4d27b720eff56a03e9aef9fd539d',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\vi\\filament-shield.php' => 
+    array (
+      0 => '95adc94377ee69926c866522330510e4402a79f0',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\lang\\zh_TW\\default.php' => 
+    array (
+      0 => '62efe1c2986d606173ba30b43e1a9f2acb4ac402',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\badges\\super-admin.blade.php' => 
+    array (
+      0 => '6fd2b402f05666f97d95427b8f5c74daeda63532',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\button.blade.php' => 
+    array (
+      0 => 'e4a89131814388454297a8ab1a975874a2f19660',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\footer.blade.php' => 
+    array (
+      0 => '47a0fac744830aed46b21fc36ff9dc209823d535',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\header.blade.php' => 
+    array (
+      0 => '768ef0083e262ee31b2ae86d45b331d791f84564',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\layout.blade.php' => 
+    array (
+      0 => 'd05b757d01f9620f1f58a54713f707eece3e3d96',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\message.blade.php' => 
+    array (
+      0 => 'e84e74f95f43df3c12b39aabc0aa26fbc2d3256f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\panel.blade.php' => 
+    array (
+      0 => '4d9ca9e8539d2c904531e517889c9c114181e394',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\subcopy.blade.php' => 
+    array (
+      0 => 'fea4b3985b7ca440407f506da6881773fb59630e',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\html\\table.blade.php' => 
+    array (
+      0 => 'ff6581cec716e753e2432b1c3e6fab1f10559d44',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\button.blade.php' => 
+    array (
+      0 => '2d12d5c518474a8235d4c19a7fc788e81ae7853f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\footer.blade.php' => 
+    array (
+      0 => '6df6e0e8252eba16d14b918e6e54d914cc278173',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\header.blade.php' => 
+    array (
+      0 => '2d12d5c518474a8235d4c19a7fc788e81ae7853f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\layout.blade.php' => 
+    array (
+      0 => '0950a42ca16af8d87b975f00b7aa6845a33a4a6c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\message.blade.php' => 
+    array (
+      0 => '99b0c886d1fddc4dae370f30b668ccb4b47bcf20',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\panel.blade.php' => 
+    array (
+      0 => '6df6e0e8252eba16d14b918e6e54d914cc278173',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\subcopy.blade.php' => 
+    array (
+      0 => '6df6e0e8252eba16d14b918e6e54d914cc278173',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\components\\mail\\text\\table.blade.php' => 
+    array (
+      0 => '6df6e0e8252eba16d14b918e6e54d914cc278173',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\emails\\team-invitation.blade.php' => 
+    array (
+      0 => '07f7525ed7f3ae701c1c489dee161a5a37cc161c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\auth\\pages\\password-expired.blade.php' => 
+    array (
+      0 => '70886d50f8a63f96274efc19a0a7eb918f747e9c',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\clusters\\appearance\\pages\\alignment.blade.php' => 
+    array (
+      0 => '56945972bbfeb944bd047ec6cf0f596d4f35c15b',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\clusters\\appearance\\pages\\background.blade.php' => 
+    array (
+      0 => '1106f9963319132423ef063a75d4fcf2d31e4a9f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\clusters\\appearance\\pages\\colors.blade.php' => 
+    array (
+      0 => '1106f9963319132423ef063a75d4fcf2d31e4a9f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\clusters\\appearance\\pages\\custom-css.blade.php' => 
+    array (
+      0 => '1106f9963319132423ef063a75d4fcf2d31e4a9f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\clusters\\appearance\\pages\\favicon.blade.php' => 
+    array (
+      0 => '1106f9963319132423ef063a75d4fcf2d31e4a9f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\clusters\\appearance\\pages\\logo.blade.php' => 
+    array (
+      0 => '52dad404df0ad377ba58aaf37663f99ecbbf20f9',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\pages\\dashboard.blade.php' => 
+    array (
+      0 => '8d4f5197d924ea37f00858041063e386bcef0b98',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\pages\\my-profile.blade.php' => 
+    array (
+      0 => '818bad415fc1a42c3a6aea47a711d7abe6780ed6',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\pages\\password.blade.php' => 
+    array (
+      0 => '1106f9963319132423ef063a75d4fcf2d31e4a9f',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\resources\\user-resource\\widgets\\user-overview.blade.php' => 
+    array (
+      0 => '7bb4c7fcba8f8b4d7fd0b4429184c3d83c92c8a9',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\filament\\widgets\\password-expired.blade.php' => 
+    array (
+      0 => 'c9182794e8c673da70f6a6f1aa7ce1a14211eccc',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\index.blade.php' => 
+    array (
+      0 => '091b5760e966088d2fec59f2c1d47872729af2b7',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\layouts\\app.blade.php' => 
+    array (
+      0 => '41949fbfa1de0a370c4e0de0d421d88b6d217725',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\layouts\\auth.blade.php' => 
+    array (
+      0 => '1e2a34d3e5de3614738ad8d7eb8f453275d31e51',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\layouts\\base.blade.php' => 
+    array (
+      0 => '8795b23e1aef2ddcdc5a8f0adaece72f7f21ed35',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\layouts\\master.blade.php' => 
+    array (
+      0 => 'd8e1592d533bc72f22f6430dfbf3539d94ee0633',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\auth\\login.blade.php' => 
+    array (
+      0 => '5e1c4b6658ef34d01536252d8c65f061f0249a23',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\auth\\passwords\\confirm.blade.php' => 
+    array (
+      0 => 'be2a93f166a4fb5fb56433d0c57e7773e1abfbfb',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\auth\\passwords\\email.blade.php' => 
+    array (
+      0 => '93a98220ec864a87d42fd483c9bb3a348176f111',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\auth\\passwords\\reset.blade.php' => 
+    array (
+      0 => 'f6c844271c5f885d06a8714f3f16bc428ed93eed',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\auth\\register.blade.php' => 
+    array (
+      0 => '826294a2f1a071953e44ce3ce0f58caf416bf954',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\auth\\verify.blade.php' => 
+    array (
+      0 => '8123bec46a091021af7af491d7fcb973c0ce7364',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\profile\\super-admin.blade.php' => 
+    array (
+      0 => '553223628e70c69b563f8707ff758eb5b0f4b1c0',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\socialite\\buttons.blade.php' => 
+    array (
+      0 => 'c3ab3979a942310d0621a5a6acc113fe70bb4d04',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\team\\change.blade.php' => 
+    array (
+      0 => '77880f2bdf54940e717e0f0437e407308b30b7dc',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\livewire\\terms-of-service.blade.php' => 
+    array (
+      0 => '917635f8bcbdc9766630861742b4a834a11d53c2',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\notifications\\email.blade.php' => 
+    array (
+      0 => '6417e1fe855b1c8cefa0a4586765d80028e42d77',
+      1 => 
+      array (
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'F:\\var\\www\\techplanner\\laravel\\Modules\\User\\Resources\\views\\pages\\errors\\password-expired.blade.php' => 
+    array (
+      0 => '24c68435dfa4bb740242b704d5484df5d405fa59',
       1 => 
       array (
       ),
