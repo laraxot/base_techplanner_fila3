@@ -28,14 +28,14 @@ return [
     'resend' => [
         'key' => env('RESEND_KEY'),
     ],
-    
+
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URI'),
         'maps_api_key' => env('GOOGLE_MAPS_API_KEY'),
     ],
-    
+
     'positionstack' => [
         'api_key' => env('POSITIONSTACK_API_KEY'),
     ],
@@ -49,5 +49,8 @@ return [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
+    ],
+    'locationiq' => [
+        'key' => env('LOCATIONIQ_API_KEY'),
     ],
 ];

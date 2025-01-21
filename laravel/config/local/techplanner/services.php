@@ -38,4 +38,7 @@ return [
         'bot_url' => env('TELEGRAM_BOT_URL'),
         'webhook' => env('TELEGRAM_BOT_WEBHOOK'),
     ],
+    'locationiq' => [
+        'key' => env('LOCATIONIQ_API_KEY'),
+    ],
 ];
