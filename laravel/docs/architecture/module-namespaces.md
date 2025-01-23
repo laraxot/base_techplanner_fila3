@@ -75,3 +75,23 @@ Modules/
 - [ ] Eseguito composer dump-autoload
 - [ ] Testato tutte le funzionalità che utilizzano la classe
 - [ ] Verificati constructor injection e service container bindings
+
+## XotBaseRelationManager e getFormSchema
+
+Le classi che estendono `XotBaseRelationManager` non implementano il metodo `form`, ma utilizzano invece `getFormSchema` per definire lo schema del form. Questo approccio consente una maggiore flessibilità nella definizione dei campi del form e si integra meglio con l'architettura modulare del progetto.
+
+Assicurati di aggiornare il codice esistente per riflettere questa convenzione e di verificare che tutte le classi derivate implementino correttamente `getFormSchema` per evitare errori di runtime.
+
+Esempio:
+
+```php
+class ExampleRelationManager extends XotBaseRelationManager
+{
+    public static function getFormSchema(): array
+    {
+        return [
+            // Definizione dei campi del form
+        ];
+    }
+}
+```
