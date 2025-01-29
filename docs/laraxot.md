@@ -5274,3 +5274,127 @@ class ClientMapWidget extends Widget
 3. I dati vengono gestiti direttamente nel widget tramite `getViewData()`
 4. Il componente Livewire padre è accessibile tramite `getLivewire()`
 5. È importante implementare controlli di tipo per evitare errori
+```
+
+# Configurazione Widget in Filament 3 (Laravel 11+)
+
+## Implementazione Widget
+
+### 1. Registrazione Widget
+```php
+// In ListClients.php o qualsiasi altra pagina Filament
+protected function getHeaderWidgets(): array
+{
+    return [
+        ClientMapWidget::class, // Registrazione diretta della classe
+    ];
+}
+```
+
+### 2. Implementazione Widget
+```php
+class ClientMapWidget extends Widget
+{
+    // Definizione della vista
+    protected static string $view = 'techplanner::filament.widgets.map';
+
+    // Metodo per fornire dati alla vista
+    public function getViewData(): array
+    {
+        /** @var ListClients $livewire */
+        $livewire = $this->getLivewire();
+
+        if (!$livewire instanceof ListClients) {
+            return ['clients' => []];
+        }
+
+        return [
+            'clients' => $livewire->getTableQuery()
+                ->get(['latitude', 'longitude', 'name'])
+                ->toArray(),
+        ];
+    }
+}
+```
+
+### 3. Template Vista
+```blade
+<x-filament::widget>
+    <x-filament::card>
+        {{-- Contenuto del widget --}}
+    </x-filament::card>
+</x-filament::widget>
+```
+
+## Best Practices
+
+1. **Registrazione Widget**
+   - Registrare direttamente la classe del widget
+   - Non usare più `WidgetConfiguration::make()`
+   - Evitare configurazioni complesse nell'header
+
+2. **Accesso ai Dati**
+   - Usare `getLivewire()` per accedere al componente padre
+   - Implementare controlli di tipo con `instanceof`
+   - Gestire sempre il caso di dati mancanti
+
+3. **Type Safety**
+   - Usare type hints e docblocks
+   - Validare i dati in ingresso
+   - Gestire i casi null in modo sicuro
+
+4. **Performance**
+   - Ottimizzare le query nel `getViewData()`
+   - Implementare caching quando necessario
+   - Limitare i dati caricati
+
+## Troubleshooting
+
+### Errori Comuni
+
+1. **Call to undefined method WidgetConfiguration::make()**
+   - Causa: Uso della vecchia sintassi di Filament 2
+   - Soluzione: Registrare direttamente la classe del widget
+   ```php
+   // ❌ Vecchia sintassi (non funziona più)
+   WidgetConfiguration::make()->widget(ClientMapWidget::class)
+
+   // ✅ Nuova sintassi corretta
+   ClientMapWidget::class
+   ```
+
+2. **Property livewire does not exist**
+   - Causa: Accesso non corretto al componente Livewire
+   - Soluzione: Usare `getLivewire()` con type casting
+   ```php
+   /** @var ListClients $livewire */
+   $livewire = $this->getLivewire();
+   ```
+
+3. **Method getTableQuery() not found**
+   - Causa: Mancato controllo del tipo
+   - Soluzione: Implementare controllo instanceof
+   ```php
+   if (!$livewire instanceof ListClients) {
+       return ['clients' => []];
+   }
+   ```
+
+## Note sulla Migrazione
+
+1. **Breaking Changes in Filament 3**
+   - Rimossa la classe `WidgetConfiguration`
+   - Semplificata la registrazione dei widget
+   - Migliorato il sistema di type hinting
+
+2. **Vantaggi del Nuovo Approccio**
+   - Codice più pulito e manutenibile
+   - Migliore type safety
+   - Performance ottimizzate
+   - Meno boilerplate
+
+3. **Migrazione dal Vecchio Sistema**
+   - Rimuovere tutti gli usi di `WidgetConfiguration`
+   - Convertire le configurazioni in proprietà del widget
+   - Aggiornare i template delle viste
+   - Testare la funzionalità dopo la migrazione
