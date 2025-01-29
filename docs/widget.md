@@ -42,6 +42,62 @@ protected function getHeaderWidgets(): array
 }
 ```
 
+## Widget Data Passing in Filament 3
+
+### Overview
+In Filament 3, data is passed to widgets using the WidgetConfiguration class rather than direct method calls.
+
+### Correct Implementation
+
+#### Widget Class
+```php
+class ClientMapWidget extends Widget
+{
+    public array $clients = [];  // Data to be received
+
+    protected function getViewData(): array
+    {
+        return [
+            'clients' => $this->clients,
+        ];
+    }
+}
+```
+
+#### Page Class
+```php
+protected function getHeaderWidgets(): array
+{
+    return [
+        \Filament\Widgets\WidgetConfiguration::make(ClientMapWidget::class)
+            ->data([
+                'clients' => $this->getTableQuery()
+                    ->get(['latitude', 'longitude', 'name'])
+                    ->toArray(),
+            ]),
+    ];
+}
+```
+
+### Common Errors
+
+#### ❌ Incorrect Method
+```php
+ClientMapWidget::make()->listClients($this)  // Will cause undefined method error
+```
+
+#### ✅ Correct Method
+```php
+\Filament\Widgets\WidgetConfiguration::make(ClientMapWidget::class)
+    ->data(['clients' => $data])
+```
+
+### Best Practices
+1. Use WidgetConfiguration::make() to create widgets
+2. Pass data using the ->data() method
+3. Define public properties in widget class to receive data
+4. Use getViewData() to pass data to the view
+
 ## Troubleshooting
 
 ### Common Issues

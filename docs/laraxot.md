@@ -5180,14 +5180,12 @@ Framework based on Laravel for building modular applications.
 
 ## Implementazione Corretta dei Widget
 
-### 1. Configurazione nella Pagina
+### 1. Registrazione del Widget nella Pagina
 ```php
 protected function getHeaderWidgets(): array
 {
     return [
-        \Filament\Widgets\WidgetConfiguration::make()
-            ->widget(YourWidget::class)
-            ->data(['key' => 'value']),
+        YourWidget::class, // Registrazione diretta della classe del widget
     ];
 }
 ```
@@ -5198,28 +5196,31 @@ class YourWidget extends Widget
 {
     protected static string $view = 'your-view';
 
-    public function mount(array $data = []): void
+    public function getViewData(): array
     {
-        // Accesso ai dati passati tramite WidgetConfiguration
-        $value = $data['key'] ?? null;
-    }
+        /** @var YourPage $livewire */
+        $livewire = $this->getLivewire();
 
-    protected function getViewData(): array
-    {
+        if (!$livewire instanceof YourPage) {
+            return ['data' => []];
+        }
+
         return [
-            // Dati da passare alla vista
+            'data' => $livewire->getTableQuery()
+                ->get(['field1', 'field2'])
+                ->toArray(),
         ];
     }
 }
 ```
 
 ### Best Practices
-1. Usare sempre `WidgetConfiguration::make()` per configurare i widget
-2. Passare i dati tramite il metodo `->data()`
-3. Gestire i dati nel metodo `mount()` del widget
-4. Implementare controlli per dati mancanti
-5. Utilizzare type hints appropriati
-6. Documentare i parametri attesi
+1. Registrare direttamente la classe del widget
+2. Utilizzare `getLivewire()` per accedere al componente Livewire padre
+3. Implementare controlli di tipo con `instanceof`
+4. Gestire i casi di errore restituendo dati vuoti
+5. Utilizzare type hints e PHPDoc
+6. Mantenere la logica del widget semplice e focalizzata
 
 ### Esempio Pratico: ClientMapWidget
 ```php
@@ -5227,9 +5228,7 @@ class YourWidget extends Widget
 protected function getHeaderWidgets(): array
 {
     return [
-        \Filament\Widgets\WidgetConfiguration::make()
-            ->widget(ClientMapWidget::class)
-            ->data(['listClients' => $this]),
+        ClientMapWidget::class,
     ];
 }
 
@@ -5237,21 +5236,18 @@ protected function getHeaderWidgets(): array
 class ClientMapWidget extends Widget
 {
     protected static string $view = 'techplanner::filament.widgets.map';
-    protected ?ListClients $listClients = null;
 
-    public function mount(?ListClients $listClients = null): void
+    public function getViewData(): array
     {
-        $this->listClients = $listClients;
-    }
+        /** @var ListClients $livewire */
+        $livewire = $this->getLivewire();
 
-    protected function getViewData(): array
-    {
-        if (!$this->listClients) {
+        if (!$livewire instanceof ListClients) {
             return ['clients' => []];
         }
 
         return [
-            'clients' => $this->listClients->getTableQuery()
+            'clients' => $livewire->getTableQuery()
                 ->get(['latitude', 'longitude', 'name'])
                 ->toArray(),
         ];
@@ -5260,16 +5256,21 @@ class ClientMapWidget extends Widget
 ```
 
 ### Troubleshooting
-1. **Errore: Call to undefined method listClients()**
-   - Causa: Uso diretto del metodo sul widget invece di WidgetConfiguration
-   - Soluzione: Utilizzare WidgetConfiguration e passare i dati tramite ->data()
+1. **Errore: Call to undefined method WidgetConfiguration::make()**
+   - Causa: Uso della vecchia sintassi di configurazione dei widget
+   - Soluzione: Registrare direttamente la classe del widget
 
-2. **Errore: Undefined array key**
-   - Causa: Accesso a dati non passati nella configurazione
-   - Soluzione: Implementare controlli per dati mancanti nel mount()
+2. **Errore: Property livewire does not exist**
+   - Causa: Accesso non corretto al componente Livewire
+   - Soluzione: Utilizzare il metodo `getLivewire()`
 
-3. **Errore: Type error**
-   - Causa: Tipo di dato non corretto
-   - Soluzione: Utilizzare type hints e validazione dei dati
+3. **Errore: Method getTableQuery() not found**
+   - Causa: Type casting non corretto del componente Livewire
+   - Soluzione: Aggiungere controllo `instanceof` e PHPDoc
 
-// ... existing code ...
+### Note Importanti
+1. La configurazione dei widget è stata semplificata in Filament 3
+2. Non è più necessario utilizzare `WidgetConfiguration::make()`
+3. I dati vengono gestiti direttamente nel widget tramite `getViewData()`
+4. Il componente Livewire padre è accessibile tramite `getLivewire()`
+5. È importante implementare controlli di tipo per evitare errori
