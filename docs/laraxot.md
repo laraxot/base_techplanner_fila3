@@ -456,7 +456,6 @@ return new AddressData(
 - Type conversion is handled automatically
 
 ### Best Practices
-<<<<<<< HEAD
 - Separazione logica business/presentazione
 - Utilizzo dei service provider
 - Pattern repository per accesso dati
@@ -8291,7 +8290,6 @@ public static function form(Form $form): Form
    - Seguire le convenzioni di naming
 
 // ... existing code ...
-=======
 - Always use the fromPhotonFeature factory method
 - Validate API responses before conversion
 - Handle null values explicitly
@@ -8302,4 +8300,3 @@ public static function form(Form $form): Form
 - Use proper error handling
 - Keep the class focused on data representation
 - Integrate with the existing data pipeline
->>>>>>> origin/dev
