@@ -1,32 +1,32 @@
-## Path Conventions and Namespaces
+# Laravel XOT Architecture Documentation
 
-- Always check each module's composer.json file for correct:
-  - Paths
-  - Namespaces
-  - Autoload configurations
+## Core Modules
+- **Xot**: Base module providing core services and providers
+- **Geo**: Location and mapping services
+- **Activity**: User activity tracking and logging
+- **UI**: Frontend components and themes
 
-- Example: Geo module data classes should be located at:
-  `/laravel/Modules/Geo/Datas/GoogleMaps/`
-  NOT `/laravel/Modules/Geo/Data/`
+## Service Providers
+- XotBaseServiceProvider: Core service registration
+- GeoService: Location-based services
 
-- This documentation serves as the single source of truth for path conventions
+## Data Transfer Objects
+- LocationDTO: Represents geographic locations
+- ElevationResultDTO: Contains elevation data
 
-## Google Maps Integration Best Practices
+## Actions
+- GetCoordinatesByAddressAction: Geocoding addresses
+- CalculateTravelTimeAction: Route calculations
+- ClusterLocationsAction: Location grouping
+- GetElevationAction: Elevation data retrieval
 
-- Data classes for Google Maps responses should be located in:
-  `/laravel/Modules/Geo/Datas/GoogleMaps/`
-  
-- Action classes for Google Maps operations should be located in:
-  `/laravel/Modules/Geo/app/Actions/GoogleMaps/`
-  
-- Example action pattern:
-  `GetAddressFromGoogleMapsAction.php` implements:
-  - Strict type checking (final class with type hints)
-  - Custom exception handling (GoogleMapsApiException)
-  - Single responsibility principle (separate methods for API key, request, validation)
-  - Immutable data objects (Spatie Data)
-  - Comprehensive error handling:
-    - Missing API key
+## Exceptions
+- InvalidLocationException: Invalid geographic data
+- InvalidElevationDataException: Invalid elevation data
+
+## Configuration
+- activity.php: Activity module configuration
+- services.php: External service integrations
     - Failed API requests
     - Empty results
     - Invalid location data
