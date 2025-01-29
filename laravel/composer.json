@@ -11,10 +11,8 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.31",
-        "nwidart/laravel-modules": "^11.1"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.20"
+        "nwidart/laravel-modules": "^11.1",
+        "thecodingmachine/safe": "^2.5"
     },
     "autoload": {
         "psr-4": {

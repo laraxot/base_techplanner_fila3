@@ -1,78 +1,65 @@
-# Specifiche del Progetto
+# TechPlanner Project Documentation
 
-> **REGOLA FONDAMENTALE**: In questa directory `/var/www/html/base_techplanner_fila3/docs` è severamente vietato creare nuovi file o cartelle. Sono permessi solo due file: `project.md` (questo file) per le specifiche del progetto e `laraxot.md` per le specifiche generiche dello strumento. Questi file devono essere continuamente letti, analizzati e aggiornati.
+## Architecture Overview
 
-> **DOCUMENTAZIONE MODULI**: Ogni modulo deve avere la propria cartella `docs` con la documentazione specifica. Prima di accedere o modificare qualsiasi file del modulo, è obbligatorio consultare il `composer.json` del modulo stesso per verificare i percorsi corretti e i namespace.
+The project follows a modular architecture with clear separation of concerns:
 
-## Panoramica
-TechPlanner è un'applicazione basata su Laravel per la gestione dei clienti con funzionalità di geolocalizzazione e calcolo distanze.
+1. **Modules**:
+   - Geo: Handles geolocation and mapping functionality
+   - Activity: Manages user activities and logs
+   - Gdpr: Implements GDPR compliance features
+   - Job: Handles background jobs and queues
+   - Lang: Manages language translations
+   - Media: Handles file uploads and media management
+   - Notify: Manages notifications system
+   - Tenant: Implements multi-tenancy features
+   - UI: Contains shared UI components
+   - User: Manages user authentication and profiles
+   - Xot: Core module with shared utilities
 
-## Struttura del Progetto
-### Directory Principali
-- `laravel/`: Core dell'applicazione Laravel
-- `public_html/`: Directory pubblica per il web server
-- `bashscripts/`: Script di utilità per gestione progetto
-- `docs/`: Documentazione e configurazioni
-- `cache/`: File di cache temporanei
+2. **Google Maps Integration**:
+   - Uses Google Maps Geocoding API
+   - Implements data validation and transformation
+   - Handles API errors and exceptions
+   - Provides clean interface for address processing
 
-### Stack Tecnologico
-- Laravel (Framework PHP)
-- Apache con SSL
-- TailwindCSS per lo styling
-- PHPUnit per testing
-- OSRM per calcolo percorsi
-- Filament 3 per admin panel
+## Key Components
 
-## Configurazione
-### Requisiti di Sistema
-- PHP 8.x
-- Apache con mod_ssl
-- Composer
-- Git
+### Data Classes
+- GoogleMapResponseData: Represents API response
+- GoogleMapResultData: Represents individual result
+- GoogleMapAddressComponentData: Represents address components
+- GoogleMapGeometryData: Represents geographic data
+- PhotonResponseData: Represents Photon API response
+- PhotonFeatureData: Represents individual Photon feature
+- PhotonPropertiesData: Represents Photon feature properties
 
-### Setup Iniziale
-1. Configurare virtual host con `techplanner.local.conf`
-2. Generare e installare certificati SSL
-3. Eseguire setup Composer
-4. Configurare TailwindCSS
-5. Popolare le coordinate dei clienti
+### Photon Integration
+- Uses Photon geocoding service (https://photon.komoot.io)
+- Implements data validation and transformation
+- Handles API errors and exceptions
+- Provides clean interface for address processing
+- Main action: GetAddressFromPhotonAction
 
-### Configurazioni Server
-- Server Name: techplanner.local
-- SSL abilitato con certificati self-signed
-- Log files:
-  - Error log: `/var/www/html/_bases/base_techplanner_fila3/error.log`
-  - Access log: `/var/www/html/_bases/base_techplanner_fila3/access.log`
+### Actions
+- GetAddressFromGoogleMapsAction: Main geocoding action
+- ValidateAddressAction: Validates address components
+- TransformAddressAction: Transforms raw data to domain model
 
-## Funzionalità Core
-### Geolocalizzazione
-- Widget per impostare coordinate di riferimento
-- Calcolo distanza in km da punto di riferimento
-- Calcolo tempo di percorrenza in auto (via OSRM API)
-- Ordinamento clienti per distanza
-- Persistenza coordinate in sessione e cookie (30 giorni)
+## Error Handling
+- GoogleMapsApiException: Base exception for API errors
+- InvalidLocationDataException: Thrown for invalid coordinates
+- MissingApiKeyException: Thrown when API key is not configured
+- NoResultsFoundException: Thrown when no results are returned
 
-### Gestione Clienti
-- Lista clienti con distanze
-- Ordinamento per distanza
-- Azioni bulk per gestione coordinate
+## Miglioramenti Recenti
+- Implementazione di un sistema di aggiornamento batch per coordinate mancanti
+- Ordinamento dei clienti in base alla distanza
+- Utilizzo di `phpstan` per l'analisi del codice
 
-## Database
-### Struttura
-- Tabelle clienti con campi per coordinate
-- Ottimizzazione SQL per calcoli geografici
-- Indici su latitude/longitude
-
-## Testing
-- Framework: PHPUnit
-- Test automatizzati per:
-  - Calcolo distanze
-  - Gestione coordinate
-  - API OSRM
-  - Widget Filament
-
-## Punti di Attenzione
-- Coordinate dei clienti devono essere popolate
-- OSRM API richiede connessione internet
-- Rate limiting possibile su OSRM API pubblica
-- Gestione certificati SSL self-signed 
+## Strumenti di Analisi del Codice
+- `phpstan` è installato nella cartella `laravel` e può essere utilizzato per analizzare il codice a diversi livelli di rigore.
+- Esempio di utilizzo:
+  ```bash
+  cd laravel && vendor/bin/phpstan analyse Modules --level=1
+  ```
