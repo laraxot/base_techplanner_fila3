@@ -5398,3 +5398,122 @@ class ClientMapWidget extends Widget
    - Convertire le configurazioni in proprietà del widget
    - Aggiornare i template delle viste
    - Testare la funzionalità dopo la migrazione
+```
+
+# Widget Reattivi in Filament 3 (Laravel 11+)
+
+## Implementazione Widget
+
+### 1. Widget Reattivo
+```php
+use Livewire\Attributes\Reactive;
+use Filament\Widgets\Widget;
+
+#[Reactive]
+class YourWidget extends Widget
+{
+    protected static string $view = 'your-view';
+
+    public function getViewData(): array
+    {
+        /** @var ?YourPage $livewire */
+        $livewire = $this->getParent();
+
+        if (!$livewire instanceof YourPage) {
+            return ['data' => []];
+        }
+
+        return [
+            'data' => $livewire->getTableQuery()
+                ->get(['field1', 'field2'])
+                ->toArray(),
+        ];
+    }
+}
+```
+
+### 2. Best Practices
+
+1. **Reattività**
+   - Usare l'attributo `#[Reactive]` per widget reattivi
+   - Importare `Livewire\Attributes\Reactive`
+   - Il widget si aggiornerà automaticamente quando il parent cambia
+
+2. **Accesso al Parent**
+   - Usare `$this->getParent()` per accedere al componente parent
+   - Aggiungere type hint nel docblock
+   - Gestire il caso in cui il parent sia null
+
+3. **Type Safety**
+   - Usare `instanceof` per verificare il tipo
+   - Gestire gracefully i casi di errore
+   - Documentare i tipi attesi
+
+### 3. Esempio Pratico: ClientMapWidget
+```php
+use Livewire\Attributes\Reactive;
+use Filament\Widgets\Widget;
+
+#[Reactive]
+class ClientMapWidget extends Widget
+{
+    protected static string $view = 'techplanner::filament.widgets.map';
+
+    public function getViewData(): array
+    {
+        /** @var ?ListClients $livewire */
+        $livewire = $this->getParent();
+
+        if (!$livewire instanceof ListClients) {
+            return ['clients' => []];
+        }
+
+        return [
+            'clients' => $livewire->getTableQuery()
+                ->get(['latitude', 'longitude', 'name'])
+                ->toArray(),
+        ];
+    }
+}
+```
+
+### 4. Troubleshooting
+
+1. **Errore: Method getLivewire does not exist**
+   - Causa: Uso di metodo non esistente
+   - Soluzione: Usare `getParent()`
+   ```php
+   // ❌ Non funziona
+   $livewire = $this->getLivewire();
+
+   // ✅ Corretto
+   $livewire = $this->getParent();
+   ```
+
+2. **Widget non si aggiorna**
+   - Causa: Manca l'attributo Reactive
+   - Soluzione: Aggiungere `#[Reactive]`
+   ```php
+   // ❌ Widget non reattivo
+   class YourWidget extends Widget
+
+   // ✅ Widget reattivo
+   #[Reactive]
+   class YourWidget extends Widget
+   ```
+
+3. **Type error**
+   - Causa: Mancato controllo del tipo
+   - Soluzione: Implementare controllo instanceof
+   ```php
+   if (!$livewire instanceof ListClients) {
+       return ['clients' => []];
+   }
+   ```
+
+### 5. Note Importanti
+1. L'attributo `#[Reactive]` è fondamentale per widget dinamici
+2. `getParent()` è il metodo standard per accedere al parent
+3. Implementare sempre controlli di tipo
+4. Gestire i casi di errore in modo graceful
+5. La reattività funziona automaticamente con Livewire 3
