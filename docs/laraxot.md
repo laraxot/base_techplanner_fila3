@@ -5175,3 +5175,101 @@ Framework based on Laravel for building modular applications.
 
 ## Notes
 *This file will be updated as more technical information is gathered*
+
+# Widget Configuration in Filament 3
+
+## Implementazione Corretta dei Widget
+
+### 1. Configurazione nella Pagina
+```php
+protected function getHeaderWidgets(): array
+{
+    return [
+        \Filament\Widgets\WidgetConfiguration::make()
+            ->widget(YourWidget::class)
+            ->data(['key' => 'value']),
+    ];
+}
+```
+
+### 2. Implementazione del Widget
+```php
+class YourWidget extends Widget
+{
+    protected static string $view = 'your-view';
+
+    public function mount(array $data = []): void
+    {
+        // Accesso ai dati passati tramite WidgetConfiguration
+        $value = $data['key'] ?? null;
+    }
+
+    protected function getViewData(): array
+    {
+        return [
+            // Dati da passare alla vista
+        ];
+    }
+}
+```
+
+### Best Practices
+1. Usare sempre `WidgetConfiguration::make()` per configurare i widget
+2. Passare i dati tramite il metodo `->data()`
+3. Gestire i dati nel metodo `mount()` del widget
+4. Implementare controlli per dati mancanti
+5. Utilizzare type hints appropriati
+6. Documentare i parametri attesi
+
+### Esempio Pratico: ClientMapWidget
+```php
+// In ListClients.php
+protected function getHeaderWidgets(): array
+{
+    return [
+        \Filament\Widgets\WidgetConfiguration::make()
+            ->widget(ClientMapWidget::class)
+            ->data(['listClients' => $this]),
+    ];
+}
+
+// In ClientMapWidget.php
+class ClientMapWidget extends Widget
+{
+    protected static string $view = 'techplanner::filament.widgets.map';
+    protected ?ListClients $listClients = null;
+
+    public function mount(?ListClients $listClients = null): void
+    {
+        $this->listClients = $listClients;
+    }
+
+    protected function getViewData(): array
+    {
+        if (!$this->listClients) {
+            return ['clients' => []];
+        }
+
+        return [
+            'clients' => $this->listClients->getTableQuery()
+                ->get(['latitude', 'longitude', 'name'])
+                ->toArray(),
+        ];
+    }
+}
+```
+
+### Troubleshooting
+1. **Errore: Call to undefined method listClients()**
+   - Causa: Uso diretto del metodo sul widget invece di WidgetConfiguration
+   - Soluzione: Utilizzare WidgetConfiguration e passare i dati tramite ->data()
+
+2. **Errore: Undefined array key**
+   - Causa: Accesso a dati non passati nella configurazione
+   - Soluzione: Implementare controlli per dati mancanti nel mount()
+
+3. **Errore: Type error**
+   - Causa: Tipo di dato non corretto
+   - Soluzione: Utilizzare type hints e validazione dei dati
+
+// ... existing code ...
