@@ -4138,13 +4138,13 @@ class CommentsRelationManager extends XotBaseRelationManager
 2. **Organizzazione File**:
    ```
    Modules/YourModule/
-├── Filament/
-│   ├── Resources/
+   ├── Filament/
+   │   ├── Resources/
    │   │   ├── YourResource.php
    │   │   ├── Pages/
    │   │   └── RelationManagers/
    │   └── Pages/
-```
+   ```
 
 3. **Documentazione**:
    ```php
@@ -8290,13 +8290,158 @@ public static function form(Form $form): Form
    - Seguire le convenzioni di naming
 
 // ... existing code ...
-- Always use the fromPhotonFeature factory method
-- Validate API responses before conversion
-- Handle null values explicitly
-- Use proper type hints
-- Maintain immutability
-- Follow consistent naming conventions
-- Document all properties
-- Use proper error handling
-- Keep the class focused on data representation
-- Integrate with the existing data pipeline
+```
+
+## Namespace e Classi Base
+
+### Resources e RelationManager
+```php
+// Resources
+use Modules\Xot\Filament\Resources\XotBaseResource;
+
+// Pages
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
+
+// RelationManager (Importante: usa il RelationManager standard di Filament)
+use Filament\Resources\RelationManagers\RelationManager;
+```
+
+### Mappatura Namespace Corretta
+
+| Componente | Namespace |
+|------------|-----------|
+| Resources | `Modules\Xot\Filament\Resources` |
+| Pages | `Modules\Xot\Filament\Resources\Pages` |
+| RelationManagers | `Filament\Resources\RelationManagers` |
+
+### Struttura File Corretta
+```bash
+Modules/YourModule/
+├── Filament/
+│   ├── Resources/
+│   │   ├── YourResource.php
+│   │   ├── Pages/
+│   │   └── RelationManagers/
+│   └── Pages/
+```
+
+// ... existing code ...
+```
+
+# Documentazione Laraxot
+
+// ... existing code ...
+
+## Configurazione Tenant-Specific
+
+### Struttura delle Configurazioni
+Le configurazioni specifiche per tenant seguono questa struttura:
+```bash
+laravel/config/[tld]/[domain]/
+├── metatag.php     # Configurazioni logo, SEO e branding
+├── xra.php         # Configurazioni core del modulo
+└── altri file...   # Altre configurazioni specifiche
+```
+
+### Metatag e Branding
+Il file `metatag.php` gestisce tutte le configurazioni relative a branding, SEO e UI:
+
+```php
+return [
+    // Informazioni Base
+    'title' => 'Nome Applicazione',
+    'sitename' => 'Nome Sito',
+    'subtitle' => 'Sottotitolo Sito',
+    'description' => 'Descrizione per SEO',
+    'keywords' => 'keyword1, keyword2',
+    
+    // Configurazione Logo
+    'logo_img' => 'xot::img/logo.svg',        // Logo principale
+    'logo_square' => 'xot::img/logo.svg',     // Versione quadrata
+    'logo_footer_img' => 'xot::img/logo.svg', // Logo footer
+    'logo_header' => 'xot::img/logo.svg',     // Logo header
+    'logo_header_dark' => 'xot::img/logo.svg',// Versione dark mode
+    'logo_alt' => 'Alt Text Logo',            // Testo alternativo
+    'favicon' => 'xot::img/favicon.ico',      // Favicon
+    
+    // Colori Brand
+    'color_primary' => '#0071b0',      // Colore primario
+    'color_title' => 'white',          // Colore titoli
+    'color_megamenu' => '#d60021',     // Colore menu
+    'color_hamburger' => '#000',       // Colore hamburger menu
+    'color_banner' => '#000',          // Colore banner
+    
+    // Social Media
+    'facebook_href' => '',
+    'twitter_href' => '',
+    'youtube_href' => '',
+    
+    // UI Configuration
+    'hide_megamenu' => false,
+    'hero_type' => 'with_megamenu_bottom',
+    'fastlink' => false,
+];
+```
+
+### Gestione Asset
+1. **Path dei Loghi**
+   - Default: `xot::img/` (package assets)
+   - Custom: `tenant::img/` (tenant-specific assets)
+   - Public: `public_html/img/` (public assets)
+
+2. **Convenzioni di Naming**
+   ```bash
+   public_html/img/[tenant]/
+   ├── logo.svg              # Logo principale
+   ├── logo-square.svg       # Logo quadrato
+   ├── logo-dark.svg         # Versione dark
+   ├── logo-footer.svg       # Logo footer
+   └── favicon/
+       ├── favicon.ico       # Favicon principale
+       ├── favicon-16x16.png # Favicon 16x16
+       ├── favicon-32x32.png # Favicon 32x32
+       └── favicon-96x96.png # Favicon 96x96
+   ```
+
+3. **IMPORTANTE: Document Root**
+   - La document root del progetto è `public_html/`, NON `public/`
+   - Tutti gli asset pubblici devono essere posizionati in `public_html/`
+   - I percorsi nei file di configurazione devono riferirsi a questa directory
+
+4. **Best Practices**
+   - Utilizzare SVG per i loghi (scalabilità)
+   - Fornire fallback PNG
+   - Ottimizzare dimensioni file
+   - Mantenere consistenza proporzioni
+   - Testare su diversi dispositivi
+   - Supportare dark/light mode
+
+4. **Implementazione View**
+   ```php
+   // Blade view
+   <img src="{{ config('metatag.logo_img') }}"
+        alt="{{ config('metatag.logo_alt') }}"
+        class="logo-class">
+   ```
+
+### Validazione e Debug
+1. **Verifica Configurazione**
+   ```bash
+   php artisan config:check metatag
+   ```
+
+2. **Common Issues**
+   - Path non trovati
+   - Asset mancanti
+   - Permessi file errati
+   - Cache configurazione
+
+3. **Troubleshooting**
+   - Pulire cache: `php artisan config:clear`
+   - Verificare permessi directory
+   - Controllare symlink assets
+   - Validare path nei file config
+
+// ... existing code ...

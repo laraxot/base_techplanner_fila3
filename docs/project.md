@@ -1,65 +1,29 @@
-# TechPlanner Project Documentation
+# Project Documentation
 
-## Architecture Overview
+## Overview
+This is the main documentation for the Base TechPlanner Fila3 project.
 
-The project follows a modular architecture with clear separation of concerns:
+## Project Structure
+- Laravel-based architecture
+- Modular design with multiple independent modules
+- Uses modern PHP/Laravel tools and packages
 
-1. **Modules**:
-   - Geo: Handles geolocation and mapping functionality
-   - Activity: Manages user activities and logs
-   - Gdpr: Implements GDPR compliance features
-   - Job: Handles background jobs and queues
-   - Lang: Manages language translations
-   - Media: Handles file uploads and media management
-   - Notify: Manages notifications system
-   - Tenant: Implements multi-tenancy features
-   - UI: Contains shared UI components
-   - User: Manages user authentication and profiles
-   - Xot: Core module with shared utilities
+## Key Features
+- Geo module for location-based services
+- Activity tracking system
+- XOT core module for base functionality
 
-2. **Google Maps Integration**:
-   - Uses Google Maps Geocoding API
-   - Implements data validation and transformation
-   - Handles API errors and exceptions
-   - Provides clean interface for address processing
+## Development Setup
+1. Clone repository
+2. Install dependencies via Composer
+3. Configure environment variables
+4. Run migrations and seeders
 
-## Key Components
+## Deployment
+- Automated deployment scripts available
+- CI/CD pipeline integration
 
-### Data Classes
-- GoogleMapResponseData: Represents API response
-- GoogleMapResultData: Represents individual result
-- GoogleMapAddressComponentData: Represents address components
-- GoogleMapGeometryData: Represents geographic data
-- PhotonResponseData: Represents Photon API response
-- PhotonFeatureData: Represents individual Photon feature
-- PhotonPropertiesData: Represents Photon feature properties
-
-### Photon Integration
-- Uses Photon geocoding service (https://photon.komoot.io)
-- Implements data validation and transformation
-- Handles API errors and exceptions
-- Provides clean interface for address processing
-- Main action: GetAddressFromPhotonAction
-
-### Actions
-- GetAddressFromGoogleMapsAction: Main geocoding action
-- ValidateAddressAction: Validates address components
-- TransformAddressAction: Transforms raw data to domain model
-
-## Error Handling
-- GoogleMapsApiException: Base exception for API errors
-- InvalidLocationDataException: Thrown for invalid coordinates
-- MissingApiKeyException: Thrown when API key is not configured
-- NoResultsFoundException: Thrown when no results are returned
-
-## Miglioramenti Recenti
-- Implementazione di un sistema di aggiornamento batch per coordinate mancanti
-- Ordinamento dei clienti in base alla distanza
-- Utilizzo di `phpstan` per l'analisi del codice
-
-## Strumenti di Analisi del Codice
-- `phpstan` è installato nella cartella `laravel` e può essere utilizzato per analizzare il codice a diversi livelli di rigore.
-- Esempio di utilizzo:
-  ```bash
-  cd laravel && vendor/bin/phpstan analyse Modules --level=1
-  ```
+## Maintenance
+- Regular updates through Composer
+- Automated testing via PHPUnit
+- Code quality checks with PHPStan
