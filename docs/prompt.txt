@@ -1,0 +1,17 @@
+Documentazione del framework (laraxot.md)
+Documentazione specifica del progetto (project.md)
+
+laraxot.md dovrebbe contenere solo:
+Documentazione tecnica del framework
+Best practices generali
+Pattern di implementazione
+Regole di base
+
+project.md dovrebbe contenere:
+Struttura del menu
+URL e routing
+Risorse specifiche del progetto
+Implementazioni concrete
+
+
+usa due file docs/laraxot.md e docs/project.md come la tua "memoria" del progetto, aggiornandoli continuamente con le informazioni che apprendi.

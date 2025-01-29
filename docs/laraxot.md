@@ -3727,13 +3727,13 @@ class CommentsRelationManager extends XotBaseRelationManager
 2. **Organizzazione File**:
    ```
    Modules/YourModule/
-   ├── Filament/
-   │   ├── Resources/
+├── Filament/
+│   ├── Resources/
    │   │   ├── YourResource.php
    │   │   ├── Pages/
    │   │   └── RelationManagers/
    │   └── Pages/
-   ```
+```
 
 3. **Documentazione**:
    ```php
@@ -6985,6 +6985,472 @@ Le pagine di lista devono seguire questa struttura:
    - Non permettere valori null se non previsti
 
 [resto del file rimane invariato]
+```
+
+# Gestione Path nel Progetto
+
+## Struttura Base del Progetto
+
+La struttura base del progetto segue questo schema:
+```
+/var/www/html/exa/                   # Root del workspace
+└── base_orisbroker_fila3/          # Directory principale del progetto
+    └── laravel/                    # Applicazione Laravel
+        └── Modules/               # Directory dei moduli
+            └── [ModuleName]/     # Singolo modulo
+```
+
+## Best Practices per i Path
+
+### 1. Costanti di Path
+```php
+// config/paths.php
+return [
+    'project_root' => base_path(),
+    'modules_path' => base_path('Modules'),
+    'workspace_root' => dirname(base_path()),
+];
+```
+
+### 2. Helper Functions
+```php
+if (! function_exists('module_path')) {
+    function module_path(string $moduleName, string $path = ''): string {
+        $basePath = config('paths.project_root');
+        return $basePath . '/Modules/' . $moduleName . ($path ? '/' . $path : '');
+    }
+}
+```
+
+### 3. Utilizzo nei Provider
+```php
+class ModuleServiceProvider extends ServiceProvider
+{
+    protected function getModulePath(): string 
+    {
+        return module_path($this->moduleName);
+    }
+    
+    protected function resolveAssetPath(string $path): string 
+    {
+        return $this->getModulePath() . '/resources/' . $path;
+    }
+}
+```
+
+### 4. Gestione Assets
+Per gli assets pubblici:
+```php
+$this->publishes([
+    $this->resolveAssetPath('js') => public_path('modules/'.$this->moduleName.'/js'),
+    $this->resolveAssetPath('css') => public_path('modules/'.$this->moduleName.'/css'),
+    $this->resolveAssetPath('svg') => public_path('modules/'.$this->moduleName.'/svg'),
+], 'module-assets');
+```
+
+### 5. Controlli di Sicurezza
+```php
+protected function validatePath(string $path): void 
+{
+    if (!is_dir($path)) {
+        throw new DirectoryNotFoundException("Directory {$path} non trovata");
+    }
+    
+    // Verifica che il path sia all'interno del progetto
+    if (!str_starts_with(realpath($path), realpath(config('paths.project_root')))) {
+        throw new SecurityException("Path non valido: deve essere all'interno del progetto");
+    }
+}
+```
+
+## Note Importanti
+
+1. **Path Assoluti vs Relativi**
+   - Usa path assoluti per operazioni di sistema
+   - Usa path relativi per riferimenti web/URL
+   - Utilizza gli helper Laravel (`base_path()`, `public_path()`, etc.)
+
+2. **Sicurezza**
+   - Valida sempre i path prima dell'utilizzo
+   - Evita di esporre path completi negli errori
+   - Usa `realpath()` per risolvere simboli e path relativi
+
+3. **Configurazione**
+   - Centralizza i path base in file di configurazione
+   - Usa costanti o enum per path frequentemente utilizzati
+   - Documenta la struttura dei path nel README
+
+4. **Convenzioni**
+   - Mantieni una struttura coerente tra i moduli
+   - Usa nomi descrittivi per le directory
+   - Segui le convenzioni PSR-4 per l'autoloading
+
+// ... existing code ...
+```
+
+# Gestione Icone nei Moduli
+
+## Heroicons
+
+### 1. Verifica delle Icone Disponibili
+
+Prima di utilizzare un'icona Heroicon, verificare sempre la sua esistenza:
+
+1. **Repository Ufficiale**:
+   - Consultare [heroicons.com](https://heroicons.com)
+   - Verificare il nome esatto dell'icona
+   - Controllare il set corretto (outline "o-" o solid "s-")
+
+2. **Convenzioni di Naming**:
+   ```php
+   // Config file
+   'icon' => 'heroicon-o-clock', // outline version
+   'icon' => 'heroicon-s-clock', // solid version
+   ```
+
+3. **Icone Comuni Verificate**:
+   ```php
+   // Activity & Logging
+   'icon' => 'heroicon-o-clock',
+   'icon' => 'heroicon-o-activity',
+   
+   // Users & Auth
+   'icon' => 'heroicon-o-users',
+   'icon' => 'heroicon-o-user-circle',
+   
+   // Content & Media
+   'icon' => 'heroicon-o-photo',
+   'icon' => 'heroicon-o-document',
+   
+   // Settings & Tools
+   'icon' => 'heroicon-o-cog',
+   'icon' => 'heroicon-o-wrench',
+   
+   // Notifications
+   'icon' => 'heroicon-o-bell',
+   'icon' => 'heroicon-o-inbox',
+   
+   // Buildings & Organization
+   'icon' => 'heroicon-o-building-office',
+   'icon' => 'heroicon-o-building-storefront',
+   
+   // UI & Components
+   'icon' => 'heroicon-o-squares-2x2',
+   'icon' => 'heroicon-o-template',
+   
+   // Core & System
+   'icon' => 'heroicon-o-cube',
+   'icon' => 'heroicon-o-chip',
+   ```
+
+### 2. Fallback e Gestione Errori
+
+```php
+class ModuleServiceProvider extends ServiceProvider
+{
+    protected function registerIcon(): void
+    {
+        $configuredIcon = config($this->moduleNameLower.'.icon');
+        $fallbackIcon = 'heroicon-o-square-3-stack-3d';
+        
+        try {
+            // Verifica se l'icona esiste
+            if (!$this->iconExists($configuredIcon)) {
+                $configuredIcon = $fallbackIcon;
+                \Log::warning("Icon {$configuredIcon} not found for module {$this->moduleNameLower}, using fallback");
+            }
+        } catch (\Exception $e) {
+            $configuredIcon = $fallbackIcon;
+        }
+        
+        config([$this->moduleNameLower.'.icon' => $configuredIcon]);
+    }
+    
+    protected function iconExists(string $icon): bool
+    {
+        // Implementare la logica di verifica
+        // es. controllare nella directory delle icone di Blade UI Kit
+        return true;
+    }
+}
+```
+
+### 3. Best Practices
+
+1. **Naming Consistente**:
+   - Usa sempre il prefisso `heroicon-`
+   - Seguito da `o-` (outline) o `s-` (solid)
+   - Nome dell'icona in lowercase con trattini
+
+2. **Documentazione**:
+   - Mantieni una lista delle icone utilizzate
+   - Documenta eventuali cambi di icone
+   - Specifica il contesto d'uso
+
+3. **Testing**:
+   - Verifica le icone in fase di sviluppo
+   - Implementa test per la presenza delle icone
+   - Controlla gli aggiornamenti di Heroicons
+
+4. **Manutenzione**:
+   - Monitora i deprecation notice
+   - Aggiorna le icone quando necessario
+   - Mantieni consistenza tra i moduli
+
+// ... existing code ...
+```
+
+# Struttura Standard dei Moduli
+
+## Convenzioni di Naming delle Directory
+
+Per mantenere consistenza e prevenire problemi, specialmente su sistemi case-sensitive:
+
+### 1. Directory Standard
+```
+laravel/Modules/[ModuleName]/
+├── app/              # Codice principale del modulo
+├── config/          # File di configurazione (sempre lowercase)
+├── database/        # Migrations, factories, seeders
+├── resources/       # Views, assets, lang files
+└── tests/           # Test files
+```
+
+### 2. Regole di Naming
+- Usare **sempre lowercase** per le directory standard:
+  - ✅ `config/`
+  - ❌ `Config/`
+  - ✅ `resources/`
+  - ❌ `Resources/`
+
+- Usare **PascalCase** solo per:
+  - Directory dei namespace (es. `app/Models/`)
+  - Nome del modulo stesso (es. `Modules/UserManager/`)
+
+### 3. Directory Speciali
+```
+laravel/Modules/[ModuleName]/
+├── docs/            # Documentazione del modulo
+├── routes/          # File delle rotte
+└── vendor/         # Dipendenze (se il modulo è standalone)
+```
+
+### 4. Best Practices
+1. **Consistenza**:
+   - Mantenere la stessa struttura in tutti i moduli
+   - Evitare directory duplicate con case diverso
+   - Seguire le convenzioni Laravel
+
+2. **Migrazione**:
+   - Quando si trova una directory con case errato:
+    ```bash
+    # 1. Spostare i contenuti
+    mv ModuleName/Config/* ModuleName/config/
+    
+    # 2. Rimuovere la directory errata
+    rm -rf ModuleName/Config
+    ```
+
+3. **Validazione**:
+   ```bash
+   # Verificare directory duplicate
+   find Modules -type d -name "Config" -o -name "config"
+   
+   # Verificare struttura corretta
+   tree -L 2 Modules/[ModuleName]
+   ```
+
+4. **Documentazione**:
+   - Documentare la struttura nel README
+   - Mantenere un template aggiornato
+   - Usare linting per verificare la struttura
+
+// ... existing code ...
+```
+
+# Polizze Convenzione
+
+## Struttura Standard
+
+### 1. Campi Principali
+```php
+// Campi obbligatori
+'nome'                         // Nome della convenzione
+'numero_convenzione'           // Numero identificativo
+'data_decorrenza'             // Data di inizio validità
+'data_scadenza_sottoscrizione' // Data di fine sottoscrizione
+
+// Campi opzionali
+'data_inizio_copertura'       // Data effettiva inizio copertura
+'data_fine_copertura'         // Data effettiva fine copertura
+'premio_netto'                // Premio al netto delle tasse
+'premio_lordo'                // Premio comprensivo di tasse
+```
+
+### 2. Visualizzazione Lista
+La vista lista deve mostrare solo le informazioni essenziali:
+
+```php
+Tables\Columns\TextColumn::make('nome')
+    ->label('Nome Convenzione')
+    ->searchable()
+    ->sortable(),
+
+Tables\Columns\TextColumn::make('numero_convenzione')
+    ->label('Numero')
+    ->searchable()
+    ->sortable(),
+
+Tables\Columns\TextColumn::make('data_decorrenza')
+    ->label('Decorrenza')
+    ->date()
+    ->sortable(),
+
+Tables\Columns\TextColumn::make('data_scadenza_sottoscrizione')
+    ->label('Scadenza Sottoscrizione')
+    ->date()
+    ->sortable(),
+```
+
+### 3. Differenze con ExaBroker
+
+#### ExaBroker (`/polizza_convenzione/`)
+- Mostra solo informazioni essenziali:
+  - Nome
+  - Numero Convenzione
+  - Data Decorrenza
+  - Data Scadenza Sottoscrizione
+
+#### Nostra Implementazione (`/broker/admin/polizza-convenziones`)
+- Mostra informazioni aggiuntive:
+  - Codice Prodotto
+  - Categoria Base
+  - Compagnia Assicurativa
+  - Premio Lordo/Netto
+  - Condizioni Restrittive
+
+### 4. Correzioni Necessarie
+
+1. **Resource Table**
+```php
+public static function table(Table $table): Table
+{
+    return $table
+        ->columns([
+            // Solo colonne essenziali
+            Tables\Columns\TextColumn::make('nome')
+                ->label('Nome Convenzione')
+                ->searchable()
+                ->sortable(),
+
+            Tables\Columns\TextColumn::make('numero_convenzione')
+                ->label('Numero')
+                ->searchable()
+                ->sortable(),
+
+            Tables\Columns\TextColumn::make('data_decorrenza')
+                ->label('Decorrenza')
+                ->date()
+                ->sortable(),
+
+            Tables\Columns\TextColumn::make('data_scadenza_sottoscrizione')
+                ->label('Scadenza Sottoscrizione')
+                ->date()
+                ->sortable(),
+        ]);
+}
+```
+
+2. **Dettaglio Completo**
+Le informazioni aggiuntive devono essere mostrate solo nella vista dettaglio:
+```php
+public static function form(Form $form): Form
+{
+    return $form
+        ->schema([
+            Forms\Components\Section::make('Informazioni Base')
+                ->schema([
+                    Forms\Components\TextInput::make('nome')
+                        ->required(),
+                    Forms\Components\TextInput::make('numero_convenzione')
+                        ->required(),
+                    Forms\Components\DatePicker::make('data_decorrenza')
+                        ->required(),
+                    Forms\Components\DatePicker::make('data_scadenza_sottoscrizione')
+                        ->required(),
+                ]),
+
+            Forms\Components\Section::make('Informazioni Aggiuntive')
+                ->schema([
+                    // Campi aggiuntivi qui
+                    // Visibili solo nel dettaglio
+                ])
+                ->collapsible(),
+        ]);
+}
+```
+
+### 5. Best Practices
+
+1. **Separazione delle Informazioni**
+   - Mostrare solo informazioni essenziali nella lista
+   - Dettagli completi nella vista di dettaglio
+   - Usare sezioni collassabili per informazioni aggiuntive
+
+2. **Performance**
+   - Caricare solo i dati necessari nella lista
+   - Eager loading solo delle relazioni necessarie
+   - Paginazione efficiente
+
+3. **UX/UI**
+   - Mantenere la lista pulita e leggibile
+   - Fornire filtri per le colonne essenziali
+   - Ordinamento intuitivo
+
+4. **Manutenibilità**
+   - Documentare le differenze con ExaBroker
+   - Mantenere consistenza nelle traduzioni
+   - Seguire le convenzioni di naming
+
+// ... existing code ...
+```
+
+## Namespace e Classi Base
+
+### Resources e RelationManager
+```php
+// Resources
+use Modules\Xot\Filament\Resources\XotBaseResource;
+
+// Pages
+use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
+
+// RelationManager (Importante: usa il RelationManager standard di Filament)
+use Filament\Resources\RelationManagers\RelationManager;
+```
+
+### Mappatura Namespace Corretta
+
+| Componente | Namespace |
+|------------|-----------|
+| Resources | `Modules\Xot\Filament\Resources` |
+| Pages | `Modules\Xot\Filament\Resources\Pages` |
+| RelationManagers | `Filament\Resources\RelationManagers` |
+
+### Struttura File Corretta
+```bash
+Modules/YourModule/
+├── Filament/
+│   ├── Resources/
+│   │   ├── YourResource.php
+│   │   ├── Pages/
+│   │   └── RelationManagers/
+│   └── Pages/
+```
+
+// ... existing code ...
 ```
 
 # Gestione Path nel Progetto
