@@ -15,3 +15,6 @@ Implementazioni concrete
 
 
 usa due file docs/laraxot.md e docs/project.md come la tua "memoria" del progetto, aggiornandoli continuamente con le informazioni che apprendi.
+
+
+Usa sempre la cartella 'docs' come memoria principale. Aggiorna continuamente la documentazione ogni volta che fai modifiche o risolvi problemi. Prima di fare qualsiasi cambiamento, controlla sempre cosa c'è scritto in 'docs' per evitare errori e duplicazioni. Studia regolarmente ciò che è documentato per migliorare il codice e mantenere tutto aggiornato.
